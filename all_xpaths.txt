@@ -1,0 +1,1280 @@
+.//input[@name='csrfmiddlewaretoken' or @id='csrfmiddlewaretoken']
+.//div[text()='Sponsor *
+Corporate Admin
+Change']
+.//label[text()='Sponsor *']
+.//span[text()='*']
+.//input[@name='sponsor' or @id='sponsor']
+.//div[text()='Corporate Admin
+Change']
+.//div
+.//img
+.//div[text()='Corporate Admin']
+.//div[text()='Corporate Admin']
+.//div
+.//div[text()='Change']
+.//button[@name='unknown' or @id='unknown']
+.//div[text()='First Name *
+Last Name *']
+.//div[text()='First Name *']
+.//label[text()='First Name *']
+.//span[text()='*']
+.//input[@name='first_name' or @id='first_name']
+.//div[text()='Last Name *']
+.//label[text()='Last Name *']
+.//span[text()='*']
+.//input[@name='last_name' or @id='last_name']
+.//div[text()='Username *']
+.//label[text()='Username *']
+.//span[text()='*']
+.//input[@name='username' or @id='username']
+.//div[text()='Email address *
+This mail id will be used for verification and further processes']
+.//label[text()='Email address *']
+.//span[text()='*']
+.//input[@name='email' or @id='email']
+.//div[text()='This mail id will be used for verification and further processes']
+.//div[text()='Country *
+Afghanistan
+Albania
+Algeria
+Andorra
+Angola
+Antigua And Barbuda
+Argentina
+Armenia
+Australia
+Austria
+Azerbaijan
+Bahamas The
+Bahrain
+Bangladesh
+Barbados
+Belarus
+Belgium
+Belize
+Benin
+Bhutan
+Bolivia
+Bosnia and Herzegovina
+Botswana
+Brazil
+Oman
+Brunei
+Bulgaria
+Burkina Faso
+Burundi
+Cambodia
+Cameroon
+Canada
+Cape Verde
+Central African Republic
+Chad
+Chile
+China
+Colombia
+Comoros
+Republic Of The Congo
+Democratic Republic Of The Congo
+Costa Rica
+Cote D'Ivoire (Ivory Coast)
+Croatia (Hrvatska)
+Cuba
+Cyprus
+Czech Republic
+Denmark
+Djibouti
+Dominica
+Dominican Republic
+Ecuador
+Egypt
+El Salvador
+Equatorial Guinea
+Eritrea
+Estonia
+Ethiopia
+Fiji Islands
+Finland
+France
+Gabon
+Gambia The
+Georgia
+Germany
+Ghana
+Greece
+Greenland
+Grenada
+Guatemala
+Guinea
+Guinea-Bissau
+Guyana
+Haiti
+Honduras
+Hungary
+Iceland
+India
+Indonesia
+Iran
+Iraq
+Ireland
+Israel
+Italy
+Jamaica
+Japan
+Jordan
+Kazakhstan
+Kenya
+Kiribati
+Korea North
+Korea South
+Kuwait
+Kyrgyzstan
+Laos
+Latvia
+Lebanon
+Lesotho
+Liberia
+Libya
+Liechtenstein
+Lithuania
+Luxembourg
+Macedonia
+Madagascar
+Malawi
+Malaysia
+Maldives
+Mali
+Malta
+Marshall Islands
+Mauritania
+Mauritius
+Mexico
+Micronesia
+Moldova
+Monaco
+Mongolia
+Morocco
+Mozambique
+Myanmar
+Namibia
+Nauru
+Nepal
+New Zealand
+Nicaragua
+Niger
+Nigeria
+Norway
+Pakistan
+Palau
+Palestinian Territory Occupied
+Panama
+Papua new Guinea
+Paraguay
+Peru
+Philippines
+Poland
+Portugal
+Qatar
+Romania
+Russia
+Rwanda
+Saint Helena
+Saint Kitts And Nevis
+Saint Lucia
+Saint Vincent And The Grenadines
+Samoa
+San Marino
+Sao Tome and Principe
+Saudi Arabia
+Senegal
+Serbia
+Seychelles
+Sierra Leone
+Singapore
+Slovakia
+Slovenia
+Solomon Islands
+Somalia
+South Africa
+South Sudan
+Spain
+Sri Lanka
+Sudan
+Suriname
+Swaziland
+Sweden
+Switzerland
+Syria
+Taiwan
+Tajikistan
+Tanzania
+Thailand
+Togo
+Netherlands
+Tonga
+Trinidad And Tobago
+Tunisia
+Turkey
+Turkmenistan
+Tuvalu
+Uganda
+Ukraine
+United Arab Emirates
+United Kingdom
+United States Minor Outlying Islands
+Uruguay
+Uzbekistan
+Vanuatu
+Venezuela
+Vietnam
+Yemen
+Zambia
+Zimbabwe
+United States of America
+India']
+.//label[text()='Country *']
+.//span[text()='*']
+.//select[@name='country']
+.//select/option[text()='']
+.//select/option[@value='AF']
+.//select/option[@value='AL']
+.//select/option[@value='DZ']
+.//select/option[@value='AD']
+.//select/option[@value='AO']
+.//select/option[@value='AG']
+.//select/option[@value='AR']
+.//select/option[@value='AM']
+.//select/option[@value='AU']
+.//select/option[@value='AT']
+.//select/option[@value='AZ']
+.//select/option[@value='BS']
+.//select/option[@value='BH']
+.//select/option[@value='BD']
+.//select/option[@value='BB']
+.//select/option[@value='BY']
+.//select/option[@value='BE']
+.//select/option[@value='BZ']
+.//select/option[@value='BJ']
+.//select/option[@value='BT']
+.//select/option[@value='BO']
+.//select/option[@value='BA']
+.//select/option[@value='BW']
+.//select/option[@value='BR']
+.//select/option[@value='OM']
+.//select/option[@value='BN']
+.//select/option[@value='BG']
+.//select/option[@value='BF']
+.//select/option[@value='BI']
+.//select/option[@value='KH']
+.//select/option[@value='CM']
+.//select/option[@value='CA']
+.//select/option[@value='CV']
+.//select/option[@value='CF']
+.//select/option[@value='TD']
+.//select/option[@value='CL']
+.//select/option[@value='CN']
+.//select/option[@value='CO']
+.//select/option[@value='KM']
+.//select/option[@value='CG']
+.//select/option[@value='CD']
+.//select/option[@value='CR']
+.//select/option[@value='CI']
+.//select/option[@value='HR']
+.//select/option[@value='CU']
+.//select/option[@value='CY']
+.//select/option[@value='CZ']
+.//select/option[@value='DK']
+.//select/option[@value='DJ']
+.//select/option[@value='DM']
+.//select/option[@value='DO']
+.//select/option[@value='EC']
+.//select/option[@value='EG']
+.//select/option[@value='SV']
+.//select/option[@value='GQ']
+.//select/option[@value='ER']
+.//select/option[@value='EE']
+.//select/option[@value='ET']
+.//select/option[@value='FJ']
+.//select/option[@value='FI']
+.//select/option[@value='FR']
+.//select/option[@value='GA']
+.//select/option[@value='GM']
+.//select/option[@value='GE']
+.//select/option[@value='DE']
+.//select/option[@value='GH']
+.//select/option[@value='GR']
+.//select/option[@value='GL']
+.//select/option[@value='GD']
+.//select/option[@value='GT']
+.//select/option[@value='GN']
+.//select/option[@value='GW']
+.//select/option[@value='GY']
+.//select/option[@value='HT']
+.//select/option[@value='HN']
+.//select/option[@value='HU']
+.//select/option[@value='IS']
+.//select/option[@value='IN']
+.//select/option[@value='ID']
+.//select/option[@value='IR']
+.//select/option[@value='IQ']
+.//select/option[@value='IE']
+.//select/option[@value='IL']
+.//select/option[@value='IT']
+.//select/option[@value='JM']
+.//select/option[@value='JP']
+.//select/option[@value='JO']
+.//select/option[@value='KZ']
+.//select/option[@value='KE']
+.//select/option[@value='KI']
+.//select/option[@value='KP']
+.//select/option[@value='KR']
+.//select/option[@value='KW']
+.//select/option[@value='KG']
+.//select/option[@value='LA']
+.//select/option[@value='LV']
+.//select/option[@value='LB']
+.//select/option[@value='LS']
+.//select/option[@value='LR']
+.//select/option[@value='LY']
+.//select/option[@value='LI']
+.//select/option[@value='LT']
+.//select/option[@value='LU']
+.//select/option[@value='MK']
+.//select/option[@value='MG']
+.//select/option[@value='MW']
+.//select/option[@value='MY']
+.//select/option[@value='MV']
+.//select/option[@value='ML']
+.//select/option[@value='MT']
+.//select/option[@value='MH']
+.//select/option[@value='MR']
+.//select/option[@value='MU']
+.//select/option[@value='MX']
+.//select/option[@value='FM']
+.//select/option[@value='MD']
+.//select/option[@value='MC']
+.//select/option[@value='MN']
+.//select/option[@value='MA']
+.//select/option[@value='MZ']
+.//select/option[@value='MM']
+.//select/option[@value='NA']
+.//select/option[@value='NR']
+.//select/option[@value='NP']
+.//select/option[@value='NZ']
+.//select/option[@value='NI']
+.//select/option[@value='NE']
+.//select/option[@value='NG']
+.//select/option[@value='NO']
+.//select/option[@value='PK']
+.//select/option[@value='PW']
+.//select/option[@value='PS']
+.//select/option[@value='PA']
+.//select/option[@value='PG']
+.//select/option[@value='PY']
+.//select/option[@value='PE']
+.//select/option[@value='PH']
+.//select/option[@value='PL']
+.//select/option[@value='PT']
+.//select/option[@value='QA']
+.//select/option[@value='RO']
+.//select/option[@value='RU']
+.//select/option[@value='RW']
+.//select/option[@value='SH']
+.//select/option[@value='KN']
+.//select/option[@value='LC']
+.//select/option[@value='VC']
+.//select/option[@value='WS']
+.//select/option[@value='SM']
+.//select/option[@value='ST']
+.//select/option[@value='SA']
+.//select/option[@value='SN']
+.//select/option[@value='RS']
+.//select/option[@value='SC']
+.//select/option[@value='SL']
+.//select/option[@value='SG']
+.//select/option[@value='SK']
+.//select/option[@value='SI']
+.//select/option[@value='SB']
+.//select/option[@value='SO']
+.//select/option[@value='ZA']
+.//select/option[@value='SS']
+.//select/option[@value='ES']
+.//select/option[@value='LK']
+.//select/option[@value='SD']
+.//select/option[@value='SR']
+.//select/option[@value='SZ']
+.//select/option[@value='SE']
+.//select/option[@value='CH']
+.//select/option[@value='SY']
+.//select/option[@value='TW']
+.//select/option[@value='TJ']
+.//select/option[@value='TZ']
+.//select/option[@value='TH']
+.//select/option[@value='TG']
+.//select/option[@value='NL']
+.//select/option[@value='TO']
+.//select/option[@value='TT']
+.//select/option[@value='TN']
+.//select/option[@value='TR']
+.//select/option[@value='TM']
+.//select/option[@value='TV']
+.//select/option[@value='UG']
+.//select/option[@value='UA']
+.//select/option[@value='AE']
+.//select/option[@value='GB']
+.//select/option[@value='UM']
+.//select/option[@value='UY']
+.//select/option[@value='UZ']
+.//select/option[@value='VU']
+.//select/option[@value='VE']
+.//select/option[@value='VN']
+.//select/option[@value='YE']
+.//select/option[@value='ZM']
+.//select/option[@value='ZW']
+.//select/option[@value='US']
+.//span[text()='India']
+.//span[text()='India']
+.//span[text()='India']
+.//span[text()='India']
+.//span
+.//b
+.//span
+.//div[text()='Phone Number *
+  +93
+  +355
+  +213
+  +376
+  +244
+  +1268
+  +54
+  +374
+  +61
+  +43
+  +994
+  +1242
+  +973
+  +880
+  +1246
+  +375
+  +32
+  +501
+  +229
+  +975
+  +591
+  +387
+  +267
+  +55
+  +968
+  +673
+  +359
+  +226
+  +257
+  +855
+  +237
+  +1
+  +238
+  +236
+  +235
+  +56
+  +86
+  +57
+  +269
+  +242
+  +242
+  +506
+  +225
+  +385
+  +53
+  +357
+  +420
+  +45
+  +253
+  +1767
+  +1809
+  +593
+  +20
+  +503
+  +240
+  +291
+  +372
+  +251
+  +679
+  +358
+  +33
+  +241
+  +220
+  +995
+  +49
+  +233
+  +30
+  +299
+  +1473
+  +502
+  +224
+  +245
+  +592
+  +509
+  +504
+  +36
+  +354
+  +91
+  +62
+  +98
+  +964
+  +353
+  +972
+  +39
+  +1876
+  +81
+  +962
+  +7
+  +254
+  +686
+  +850
+  +82
+  +965
+  +996
+  +856
+  +371
+  +961
+  +266
+  +231
+  +218
+  +423
+  +370
+  +352
+  +389
+  +261
+  +265
+  +60
+  +960
+  +223
+  +356
+  +692
+  +222
+  +230
+  +52
+  +691
+  +373
+  +377
+  +976
+  +212
+  +258
+  +95
+  +264
+  +674
+  +977
+  +64
+  +505
+  +227
+  +234
+  +47
+  +92
+  +680
+  +970
+  +507
+  +675
+  +595
+  +51
+  +63
+  +48
+  +351
+  +974
+  +40
+  +70
+  +250
+  +290
+  +1869
+  +1758
+  +1784
+  +684
+  +378
+  +239
+  +966
+  +221
+  +381
+  +248
+  +232
+  +65
+  +421
+  +386
+  +677
+  +252
+  +27
+  +211
+  +34
+  +94
+  +249
+  +597
+  +268
+  +46
+  +41
+  +963
+  +886
+  +992
+  +255
+  +66
+  +228
+  +31
+  +676
+  +1868
+  +216
+  +90
+  +7370
+  +688
+  +256
+  +380
+  +971
+  +44
+  +1
+  +598
+  +998
+  +678
+  +58
+  +84
+  +967
+  +260
+  +263
+  +1']
+.//label[text()='Phone Number *']
+.//span[text()='*']
+.//div[text()='+93
+  +355
+  +213
+  +376
+  +244
+  +1268
+  +54
+  +374
+  +61
+  +43
+  +994
+  +1242
+  +973
+  +880
+  +1246
+  +375
+  +32
+  +501
+  +229
+  +975
+  +591
+  +387
+  +267
+  +55
+  +968
+  +673
+  +359
+  +226
+  +257
+  +855
+  +237
+  +1
+  +238
+  +236
+  +235
+  +56
+  +86
+  +57
+  +269
+  +242
+  +242
+  +506
+  +225
+  +385
+  +53
+  +357
+  +420
+  +45
+  +253
+  +1767
+  +1809
+  +593
+  +20
+  +503
+  +240
+  +291
+  +372
+  +251
+  +679
+  +358
+  +33
+  +241
+  +220
+  +995
+  +49
+  +233
+  +30
+  +299
+  +1473
+  +502
+  +224
+  +245
+  +592
+  +509
+  +504
+  +36
+  +354
+  +91
+  +62
+  +98
+  +964
+  +353
+  +972
+  +39
+  +1876
+  +81
+  +962
+  +7
+  +254
+  +686
+  +850
+  +82
+  +965
+  +996
+  +856
+  +371
+  +961
+  +266
+  +231
+  +218
+  +423
+  +370
+  +352
+  +389
+  +261
+  +265
+  +60
+  +960
+  +223
+  +356
+  +692
+  +222
+  +230
+  +52
+  +691
+  +373
+  +377
+  +976
+  +212
+  +258
+  +95
+  +264
+  +674
+  +977
+  +64
+  +505
+  +227
+  +234
+  +47
+  +92
+  +680
+  +970
+  +507
+  +675
+  +595
+  +51
+  +63
+  +48
+  +351
+  +974
+  +40
+  +70
+  +250
+  +290
+  +1869
+  +1758
+  +1784
+  +684
+  +378
+  +239
+  +966
+  +221
+  +381
+  +248
+  +232
+  +65
+  +421
+  +386
+  +677
+  +252
+  +27
+  +211
+  +34
+  +94
+  +249
+  +597
+  +268
+  +46
+  +41
+  +963
+  +886
+  +992
+  +255
+  +66
+  +228
+  +31
+  +676
+  +1868
+  +216
+  +90
+  +7370
+  +688
+  +256
+  +380
+  +971
+  +44
+  +1
+  +598
+  +998
+  +678
+  +58
+  +84
+  +967
+  +260
+  +263
+  +1']
+.//div[text()='+93
+  +355
+  +213
+  +376
+  +244
+  +1268
+  +54
+  +374
+  +61
+  +43
+  +994
+  +1242
+  +973
+  +880
+  +1246
+  +375
+  +32
+  +501
+  +229
+  +975
+  +591
+  +387
+  +267
+  +55
+  +968
+  +673
+  +359
+  +226
+  +257
+  +855
+  +237
+  +1
+  +238
+  +236
+  +235
+  +56
+  +86
+  +57
+  +269
+  +242
+  +242
+  +506
+  +225
+  +385
+  +53
+  +357
+  +420
+  +45
+  +253
+  +1767
+  +1809
+  +593
+  +20
+  +503
+  +240
+  +291
+  +372
+  +251
+  +679
+  +358
+  +33
+  +241
+  +220
+  +995
+  +49
+  +233
+  +30
+  +299
+  +1473
+  +502
+  +224
+  +245
+  +592
+  +509
+  +504
+  +36
+  +354
+  +91
+  +62
+  +98
+  +964
+  +353
+  +972
+  +39
+  +1876
+  +81
+  +962
+  +7
+  +254
+  +686
+  +850
+  +82
+  +965
+  +996
+  +856
+  +371
+  +961
+  +266
+  +231
+  +218
+  +423
+  +370
+  +352
+  +389
+  +261
+  +265
+  +60
+  +960
+  +223
+  +356
+  +692
+  +222
+  +230
+  +52
+  +691
+  +373
+  +377
+  +976
+  +212
+  +258
+  +95
+  +264
+  +674
+  +977
+  +64
+  +505
+  +227
+  +234
+  +47
+  +92
+  +680
+  +970
+  +507
+  +675
+  +595
+  +51
+  +63
+  +48
+  +351
+  +974
+  +40
+  +70
+  +250
+  +290
+  +1869
+  +1758
+  +1784
+  +684
+  +378
+  +239
+  +966
+  +221
+  +381
+  +248
+  +232
+  +65
+  +421
+  +386
+  +677
+  +252
+  +27
+  +211
+  +34
+  +94
+  +249
+  +597
+  +268
+  +46
+  +41
+  +963
+  +886
+  +992
+  +255
+  +66
+  +228
+  +31
+  +676
+  +1868
+  +216
+  +90
+  +7370
+  +688
+  +256
+  +380
+  +971
+  +44
+  +1
+  +598
+  +998
+  +678
+  +58
+  +84
+  +967
+  +260
+  +263
+  +1']
+.//select[@name='phone_code']
+.//select/option[@value='AF']
+.//select/option[@value='AL']
+.//select/option[@value='DZ']
+.//select/option[@value='AD']
+.//select/option[@value='AO']
+.//select/option[@value='AG']
+.//select/option[@value='AR']
+.//select/option[@value='AM']
+.//select/option[@value='AU']
+.//select/option[@value='AT']
+.//select/option[@value='AZ']
+.//select/option[@value='BS']
+.//select/option[@value='BH']
+.//select/option[@value='BD']
+.//select/option[@value='BB']
+.//select/option[@value='BY']
+.//select/option[@value='BE']
+.//select/option[@value='BZ']
+.//select/option[@value='BJ']
+.//select/option[@value='BT']
+.//select/option[@value='BO']
+.//select/option[@value='BA']
+.//select/option[@value='BW']
+.//select/option[@value='BR']
+.//select/option[@value='OM']
+.//select/option[@value='BN']
+.//select/option[@value='BG']
+.//select/option[@value='BF']
+.//select/option[@value='BI']
+.//select/option[@value='KH']
+.//select/option[@value='CM']
+.//select/option[@value='CA']
+.//select/option[@value='CV']
+.//select/option[@value='CF']
+.//select/option[@value='TD']
+.//select/option[@value='CL']
+.//select/option[@value='CN']
+.//select/option[@value='CO']
+.//select/option[@value='KM']
+.//select/option[@value='CG']
+.//select/option[@value='CD']
+.//select/option[@value='CR']
+.//select/option[@value='CI']
+.//select/option[@value='HR']
+.//select/option[@value='CU']
+.//select/option[@value='CY']
+.//select/option[@value='CZ']
+.//select/option[@value='DK']
+.//select/option[@value='DJ']
+.//select/option[@value='DM']
+.//select/option[@value='DO']
+.//select/option[@value='EC']
+.//select/option[@value='EG']
+.//select/option[@value='SV']
+.//select/option[@value='GQ']
+.//select/option[@value='ER']
+.//select/option[@value='EE']
+.//select/option[@value='ET']
+.//select/option[@value='FJ']
+.//select/option[@value='FI']
+.//select/option[@value='FR']
+.//select/option[@value='GA']
+.//select/option[@value='GM']
+.//select/option[@value='GE']
+.//select/option[@value='DE']
+.//select/option[@value='GH']
+.//select/option[@value='GR']
+.//select/option[@value='GL']
+.//select/option[@value='GD']
+.//select/option[@value='GT']
+.//select/option[@value='GN']
+.//select/option[@value='GW']
+.//select/option[@value='GY']
+.//select/option[@value='HT']
+.//select/option[@value='HN']
+.//select/option[@value='HU']
+.//select/option[@value='IS']
+.//select/option[@value='IN']
+.//select/option[@value='ID']
+.//select/option[@value='IR']
+.//select/option[@value='IQ']
+.//select/option[@value='IE']
+.//select/option[@value='IL']
+.//select/option[@value='IT']
+.//select/option[@value='JM']
+.//select/option[@value='JP']
+.//select/option[@value='JO']
+.//select/option[@value='KZ']
+.//select/option[@value='KE']
+.//select/option[@value='KI']
+.//select/option[@value='KP']
+.//select/option[@value='KR']
+.//select/option[@value='KW']
+.//select/option[@value='KG']
+.//select/option[@value='LA']
+.//select/option[@value='LV']
+.//select/option[@value='LB']
+.//select/option[@value='LS']
+.//select/option[@value='LR']
+.//select/option[@value='LY']
+.//select/option[@value='LI']
+.//select/option[@value='LT']
+.//select/option[@value='LU']
+.//select/option[@value='MK']
+.//select/option[@value='MG']
+.//select/option[@value='MW']
+.//select/option[@value='MY']
+.//select/option[@value='MV']
+.//select/option[@value='ML']
+.//select/option[@value='MT']
+.//select/option[@value='MH']
+.//select/option[@value='MR']
+.//select/option[@value='MU']
+.//select/option[@value='MX']
+.//select/option[@value='FM']
+.//select/option[@value='MD']
+.//select/option[@value='MC']
+.//select/option[@value='MN']
+.//select/option[@value='MA']
+.//select/option[@value='MZ']
+.//select/option[@value='MM']
+.//select/option[@value='NA']
+.//select/option[@value='NR']
+.//select/option[@value='NP']
+.//select/option[@value='NZ']
+.//select/option[@value='NI']
+.//select/option[@value='NE']
+.//select/option[@value='NG']
+.//select/option[@value='NO']
+.//select/option[@value='PK']
+.//select/option[@value='PW']
+.//select/option[@value='PS']
+.//select/option[@value='PA']
+.//select/option[@value='PG']
+.//select/option[@value='PY']
+.//select/option[@value='PE']
+.//select/option[@value='PH']
+.//select/option[@value='PL']
+.//select/option[@value='PT']
+.//select/option[@value='QA']
+.//select/option[@value='RO']
+.//select/option[@value='RU']
+.//select/option[@value='RW']
+.//select/option[@value='SH']
+.//select/option[@value='KN']
+.//select/option[@value='LC']
+.//select/option[@value='VC']
+.//select/option[@value='WS']
+.//select/option[@value='SM']
+.//select/option[@value='ST']
+.//select/option[@value='SA']
+.//select/option[@value='SN']
+.//select/option[@value='RS']
+.//select/option[@value='SC']
+.//select/option[@value='SL']
+.//select/option[@value='SG']
+.//select/option[@value='SK']
+.//select/option[@value='SI']
+.//select/option[@value='SB']
+.//select/option[@value='SO']
+.//select/option[@value='ZA']
+.//select/option[@value='SS']
+.//select/option[@value='ES']
+.//select/option[@value='LK']
+.//select/option[@value='SD']
+.//select/option[@value='SR']
+.//select/option[@value='SZ']
+.//select/option[@value='SE']
+.//select/option[@value='CH']
+.//select/option[@value='SY']
+.//select/option[@value='TW']
+.//select/option[@value='TJ']
+.//select/option[@value='TZ']
+.//select/option[@value='TH']
+.//select/option[@value='TG']
+.//select/option[@value='NL']
+.//select/option[@value='TO']
+.//select/option[@value='TT']
+.//select/option[@value='TN']
+.//select/option[@value='TR']
+.//select/option[@value='TM']
+.//select/option[@value='TV']
+.//select/option[@value='UG']
+.//select/option[@value='UA']
+.//select/option[@value='AE']
+.//select/option[@value='GB']
+.//select/option[@value='UM']
+.//select/option[@value='UY']
+.//select/option[@value='UZ']
+.//select/option[@value='VU']
+.//select/option[@value='VE']
+.//select/option[@value='VN']
+.//select/option[@value='YE']
+.//select/option[@value='ZM']
+.//select/option[@value='ZW']
+.//select/option[@value='US']
+.//input[@name='phone_number' or @id='phone_number']
+.//div[text()='Date of birth *']
+.//label[text()='Date of birth *']
+.//span[text()='*']
+.//input[@name='date_of_birth' or @id='date_of_birth']
+.//div[text()='Gender *
+-- Choose an option --
+Rather not say
+Male
+Female
+-- Choose an option --']
+.//label[text()='Gender *']
+.//span[text()='*']
+.//select[@name='gender']
+.//select/option[text()='-- Choose an option --']
+.//select/option[@value='na']
+.//select/option[@value='m']
+.//select/option[@value='f']
+.//span[text()='-- Choose an option --']
+.//span[text()='-- Choose an option --']
+.//span[text()='-- Choose an option --']
+.//span[text()='-- Choose an option --']
+.//span
+.//b
+.//span
+.//div[text()='Password *
+Password confirmation *']
+.//div[text()='Password *']
+.//label[text()='Password *']
+.//span[text()='*']
+.//input[@name='password1' or @id='password1']
+.//div
+.//input[@name='checkbox-id_password1' or @id='checkbox-id_password1']
+.//label
+.//div[text()='Password confirmation *']
+.//label[text()='Password confirmation *']
+.//span[text()='*']
+.//input[@name='password2' or @id='password2']
+.//div
+.//input[@name='checkbox-id_password2' or @id='checkbox-id_password2']
+.//label
+.//div[text()='I agree to the Terms and Conditions.']
+.//div[text()='I agree to the Terms and Conditions.']
+.//div[text()='I agree to the Terms and Conditions.']
+.//input[@name='agree_terms' or @id='agree_terms']
+.//label[text()='I agree to the Terms and Conditions.']
+.//label[text()='I agree to the Terms and Conditions.']
+.//a[text()='Terms and Conditions.']
+.//div[text()='Sign Up']
+.//div[text()='Sign Up']
+.//button[@name='addnew-member' or @id='addnew-member']
