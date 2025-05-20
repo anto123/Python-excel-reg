@@ -4,14 +4,11 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.common.exceptions import TimeoutException
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-import time
 from selenium.common.exceptions import (
     NoSuchElementException, TimeoutException, ElementClickInterceptedException
 )
+
+# === Utility Functions ===
 
 def load_data_from_excel(file_path):
     wb = openpyxl.load_workbook(file_path)
@@ -85,6 +82,34 @@ def print_xpath_locators(driver):
     except Exception as e:
         print(f"Failed to print locators: {e}")
 
+def click_change_button_if_present(driver):
+    try:
+        change_button = WebDriverWait(driver, 3).until(
+            EC.element_to_be_clickable((By.XPATH, "//button[text()='Change']"))
+        )
+        change_button.click()
+        print("Clicked 'Change' button.")
+        time.sleep(1)
+        return True
+    except TimeoutException:
+        return False
+
+def handle_sponsor_field(driver, sponsor_id, sponsor_value):
+    elem = wait_for_element(driver, By.ID, sponsor_id, timeout=5)
+    if elem is None:
+        print(f"Sponsor element with ID '{sponsor_id}' not found.")
+        return
+    if click_change_button_if_present(driver):
+        try:
+            elem = WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.ID, sponsor_id))
+            )
+            elem.clear()
+            print("Cleared Sponsor field.")
+        except Exception as e:
+            print(f"Failed to clear Sponsor field: {e}")
+    fill_field(elem, sponsor_value)
+
 def extract_ids_from_form(driver):
     try:
         form = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//form[@method='POST']")))
@@ -100,6 +125,8 @@ def extract_ids_from_form(driver):
         print(f"Failed to extract form elements: {e}")
         return {}
 
+# === Modified Function ===
+
 def process_form_data(driver, rows, field_id_mapping):
     for field_name, field_value in rows:
         if field_name == "URL":
@@ -108,6 +135,11 @@ def process_form_data(driver, rows, field_id_mapping):
         field_id = field_id_mapping.get(field_name)
         if not field_id:
             print(f"No mapping found for '{field_name}'. Skipping.")
+            continue
+
+        # Handle Sponsor field using special logic
+        if field_name == "Sponsor":
+            handle_sponsor_field(driver, field_id, field_value)
             continue
 
         if field_name == "Enrollment Package":
@@ -158,7 +190,7 @@ def process_form_data(driver, rows, field_id_mapping):
         else:
             fill_field(elem, field_value)
 
-# ===== MAIN SCRIPT =====
+# ===== Main Script =====
 
 excel_file = '/home/antonyraj.m/Desktop/python/datadetails.xlsx'
 rows = load_data_from_excel(excel_file)
@@ -175,6 +207,7 @@ click_accept_popup(driver)
 
 print_xpath_locators(driver)
 
+# Signup form mapping
 signup_mapping = {
     "Sponsor": "id_sponsor",
     "First Name": "id_first_name",
@@ -193,7 +226,7 @@ signup_mapping = {
 # Fill signup form
 process_form_data(driver, rows, signup_mapping)
 
-# Step 1: Click the Sign Up button
+# Step 1: Click Sign Up button
 try:
     sign_up_btn = WebDriverWait(driver, 10).until(
         EC.element_to_be_clickable((By.XPATH, "//button[@type='submit' and @label='Sign Up']"))
@@ -204,48 +237,35 @@ except TimeoutException:
     print("Sign Up button not found.")
     driver.quit()
 
-# Step 2: Wait for the popup to possibly appear
-time.sleep(3)  # Wait for popup animation/load if any
-
-# Step 3: Check if token input popup appears
+# Step 2: Token popup check
+time.sleep(3)
 try:
-    token_input = WebDriverWait(driver, 5).until(
-        EC.presence_of_element_located((By.ID, "user_token"))
-    )
+    token_input = WebDriverWait(driver, 5).until(EC.presence_of_element_located((By.ID, "user_token")))
     if token_input.is_displayed():
         print("Token popup appeared. Entering token...")
         token_input.clear()
         token_input.send_keys("422602")
-
-        # Click the token confirm button
-        try:
-            confirm_btn = WebDriverWait(driver, 5).until(
-                EC.element_to_be_clickable((
-                    By.XPATH,
-                    "//button[@type='submit' and contains(text(), 'Sign Up') and @onclick='update_token(this);return false;']"
-                ))
-            )
-            confirm_btn.click()
-            print("Submitted token and continuing.")
-        except TimeoutException:
-            print("Confirm button after token entry not found.")
+        confirm_btn = WebDriverWait(driver, 5).until(
+            EC.element_to_be_clickable((By.XPATH, "//button[@type='submit' and contains(text(), 'Sign Up') and @onclick='update_token(this);return false;']"))
+        )
+        confirm_btn.click()
+        print("Submitted token and continuing.")
     else:
-        print("Token input field is not visible. Continuing with next step.")
+        print("Token input field not visible.")
 except TimeoutException:
-    print("No token popup appeared. Continuing with next step.")
+    print("No token popup appeared.")
 
-
-# Wait for enrollment page to load
+# Wait for Enrollment page
 print("Waiting for Enrollment page...")
 time.sleep(6)
 
-# Extract and fill enrollment form
+# Extract & process enrollment form
 enrollment_mapping = extract_ids_from_form(driver)
 enrollment_mapping["Enrollment Package"] = "placeholder"
 enrollment_mapping["Proceed"] = "click"
 process_form_data(driver, rows, enrollment_mapping)
 
-# Fill billing address manually
+# Fill billing address
 print("\nFilling Billing Address...")
 driver.find_element(By.NAME, "billing-customer_address_name_line").send_keys("ears")
 driver.find_element(By.NAME, "billing-customer_address_premise").send_keys("ears")
@@ -268,12 +288,12 @@ state_drop = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPAT
 state_drop.click()
 print("Selected state: Andhra Pradesh")
 
-# Click checkout
+# Checkout
 checkout = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//input[@name='checkout']")))
 checkout.click()
 print("Clicked checkout.")
 
-# Handle payment form
+# Payment process
 try:
     Test_payment = WebDriverWait(driver, 20).until(
         EC.element_to_be_clickable((By.XPATH, "//form[contains(@class,'payment-form-default')]//input[@value='Proceed to Make Payment']"))
@@ -286,13 +306,15 @@ except TimeoutException:
     driver.save_screenshot("payment_button_not_found.png")
     raise
 
-# Confirm dropdown and finish
+# Final step: Confirm and Finish
 select_element = WebDriverWait(driver, 10).until(
     EC.presence_of_element_located((By.XPATH, "//select[@id='id_status']"))
 )
 Select(select_element).select_by_visible_text("Confirmed")
 
-finish_button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[text()='Finish']")))
+finish_button = WebDriverWait(driver, 10).until(
+    EC.element_to_be_clickable((By.XPATH, "//button[text()='Finish']"))
+)
 finish_button.click()
 
 print("Waiting before closing browser...")
