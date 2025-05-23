@@ -122,6 +122,13 @@ def click_change_button_if_present(driver):
         return False
 
 def handle_sponsor_field(driver, sponsor_id, sponsor_value):
+    # Check for comma-separated sponsor names
+    sponsor_raw = str(sponsor_value).strip()
+    if ',' in sponsor_raw:
+        sponsor_list = [s.strip() for s in sponsor_raw.split(',') if s.strip()]
+        sponsor_value = random.choice(sponsor_list)
+        print(f"Randomly selected sponsor: {sponsor_value}")
+
     elem = wait_for_element(driver, By.ID, sponsor_id)
     if not elem:
         print("Sponsor field not found.")
@@ -139,11 +146,15 @@ def extract_ids_from_form(driver):
     try:
         form = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//form[@method='POST']")))
         elements = form.find_elements(By.XPATH, ".//*[@id]")
+        allelements=elements.get_attribute("id")
+        print("the package", allelements)
         id_mapping = {elem.get_attribute("id"): elem.get_attribute("id") for elem in elements if elem.get_attribute("id")}
         # Try to find submit button xpath
         try:
             submit_elem = form.find_element(By.XPATH, ".//input[@type='submit' and not(@disabled)]")
             id_mapping["submit_button_xpath"] = "//form[@method='POST']//input[@type='submit' and not(@disabled)]"
+            submit_outer_html=submit_elem.get_attribute("outerHTML")
+            print("submit prooceed button", submit_outer_html)
         except Exception:
             pass
         return id_mapping
@@ -224,7 +235,7 @@ def process_form_data(driver, rows, field_id_mapping, generated_data={}):
 
 # === MAIN SCRIPT START ===
 def main():
-    excel_file = '/home/antonyraj.m/Desktop/Base-Automation/newdata.xlsx'
+    excel_file = './newdata.xlsx'
     rows = load_data_from_excel(excel_file)
 
     # Extract URL from Excel data
@@ -237,7 +248,7 @@ def main():
         "First Name": generate_random_string(6),
         "Last Name": generate_random_string(6),
         "Username": generate_random_username(),
-        "Subdomain": generate_random_username(),
+        # "Subdomain": generate_random_username(),
         "Email address": generate_random_email(),
         "Phone Number": generate_random_phone(),
     }
@@ -254,7 +265,7 @@ def main():
     driver.find_element(By.XPATH, "//input[@id='id_username']").send_keys(generated_data['Username'])
     driver.find_element(By.XPATH, "//input[@id='id_email']").send_keys(generated_data['Email address'])
     driver.find_element(By.XPATH, "//input[@id='id_phone_number']").send_keys(generated_data['Phone Number'])
-    # driver.find_element(By.XPATH, "//input[@id='id_subdomain']").send_keys(generated_data['Subdomain'])
+    #driver.find_element(By.XPATH, "//input[@id='id_subdomain']").send_keys(generated_data['Subdomain'])
    
     click_accept_popup(driver)
     
