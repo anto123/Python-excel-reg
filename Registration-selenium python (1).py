@@ -7,6 +7,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
+from selenium.common.exceptions import NoSuchElementException
+from selenium.common.exceptions import NoSuchElementException, JavascriptException
 
 # === RANDOM GENERATORS ===
 EMAIL_PREFIXES = ['epsminuanish', 'epsshyn', 'epskrish', 'epssanjana', 'epssreya', 'epsgoku', 'epsannjoe', 'epsmithuna', 'epsmithuna', 'epsnrk', 'epsakhila', 'epsananden', 'epsanand.m', 
@@ -146,8 +148,6 @@ def extract_ids_from_form(driver):
     try:
         form = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, "//form[@method='POST']")))
         elements = form.find_elements(By.XPATH, ".//*[@id]")
-        allelements=elements.get_attribute("id")
-        print("the package", allelements)
         id_mapping = {elem.get_attribute("id"): elem.get_attribute("id") for elem in elements if elem.get_attribute("id")}
         # Try to find submit button xpath
         try:
@@ -333,10 +333,10 @@ def main():
     print("Filling Billing Information...")
     try:
         # === Billing Info Filling ===
-        driver.find_element(By.NAME, "billing-customer_address_name_line").send_keys("ears")
-        driver.find_element(By.NAME, "billing-customer_address_premise").send_keys("ears")
-        driver.find_element(By.NAME, "billing-customer_address_locality").send_keys("ears")
-        driver.find_element(By.NAME, "billing-customer_address_postal_code").send_keys("895456")
+        driver.find_element(By.XPATH, "//input[@name='billing-customer_address_name_line']").send_keys("ears")
+        driver.find_element(By.XPATH, "//input[@name='billing-customer_address_premise']").send_keys("ears")
+        driver.find_element(By.XPATH, "//input[@name='billing-customer_address_locality']").send_keys("ears")
+        driver.find_element(By.XPATH, "//input[@name='billing-customer_address_postal_code']").send_keys("895456")
 
         # Country selection
         country = WebDriverWait(driver, 10).until(
@@ -363,16 +363,41 @@ def main():
         )
         state_drop.click()
         print("Selected state: Andhra Pradesh")
+        
+        try:
+            address_checkbox = driver.find_element(By.ID, "styled-checkbox-1")
+            print("Checkbox ID:", address_checkbox.get_attribute("id"))
 
+            # Scroll into view
+            driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", address_checkbox)
+
+            # Small wait to ensure scroll animation is done
+            time.sleep(1)
+
+            # Click via JavaScript
+            driver.execute_script("arguments[0].click();", address_checkbox)
+            print("Clicked the checkbox via JavaScript.")
+
+        except NoSuchElementException:
+            print("Checkbox not found — continuing...")
+
+        except JavascriptException as e:
+            print("JavaScript click failed:", str(e))
+                      
         # Checkout
         checkout = WebDriverWait(driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, "//input[@name='checkout']"))
         )
         checkout.click()
         print("Clicked checkout.")
-
-        # === Payment Process ===
+    except TimeoutException:
+        print("no problem")
+        
+        # === Payment Process === Test payment
+    handle_test_payment(driver)
+def handle_test_payment(driver):
         try:
+            print("successssssssss")
             Test_payment = WebDriverWait(driver, 20).until(
                 EC.element_to_be_clickable((By.XPATH, "//form[contains(@class,'payment-form-default')]//input[@value='Proceed to Make Payment']"))
             )
@@ -385,8 +410,7 @@ def main():
             print("Error: 'Proceed to Make Payment' button not found.")
             driver.save_screenshot("payment_button_not_found.png")
             raise
-
-        # === Final Step: Confirm and Finish ===
+        #  === Final Step: Confirm and Finish ===
         try:
             select_element = WebDriverWait(driver, 10).until(
                 EC.presence_of_element_located((By.XPATH, "//select[@id='id_status']"))
@@ -408,11 +432,68 @@ def main():
 
         # Wait before closing
         print("Waiting before closing browser...")
+        input("script finished")
         time.sleep(5)
+        
+# def handle_stripe_payment(driver):
+#     # Strip payment full work:
+    
+#     try:
+#         driver.find_element(By.XPATH, "//label[@for='stripeintent_subscription']").click()
+        
+#         stripe = WebDriverWait(driver, 20).until(
+#             EC.element_to_be_clickable((By.XPATH, "//form[contains(@class,'payment-form-stripe')]//input[@value='Proceed to Make Payment']"))
+#         )
+#         driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", stripe)
+#         time.sleep(1)
+#         stripe.click()
+#         print("Clicked 'Proceed to Make Payment'.")
 
-    finally:
-        # driver.quit()
-        print("Browser closed.successfully completed user registration")
+#         # --- NEW: Switch to Stripe iframe for card input ---
+#         WebDriverWait(driver, 10).until(
+#             EC.frame_to_be_available_and_switch_to_it((By.CSS_SELECTOR, "iframe[name^='__privateStripeFrame']"))
+#         )
+#         print("Switched to Stripe iframe.")
+
+#         # Locate and fill the card number input
+#         card_number = WebDriverWait(driver, 10).until(
+#             EC.presence_of_element_located((By.XPATH, "//input[@name='cardnumber']"))
+#         )
+#         cvc_number = WebDriverWait(driver, 10).until(
+#             EC.presence_of_element_located((By.XPATH, "//input[@name='cvc']"))
+#         )
+#         exp_number = WebDriverWait(driver, 10).until(
+#             EC.presence_of_element_located((By.XPATH, "//input[@name='exp-date']"))
+#         )
+#         card_number.click()
+#         card_number.send_keys("4242424242424242")
+#         time.sleep(1)
+#         exp_number.send_keys("0835")  # Expiry MMYY
+#         time.sleep(5)
+#         cvc_number.send_keys("123")   # CVC
+#         print("Card details entered.")
+
+#         # Switch back to main content
+#         driver.switch_to.default_content()
+
+#         # Click Pay Now / Submit button
+#         pay_button = WebDriverWait(driver, 10).until(
+#             EC.element_to_be_clickable((By.ID, "stripe-submit-button"))
+#         )
+#         driver.execute_script("arguments[0].scrollIntoView({block: 'center'});", pay_button)
+#         pay_button.click()
+#         print("Clicked Pay Now button.")
+#         print("Registration procss completed for stripe")
+#         input("Script finished. Press Enter to close browser...")
+#     except TimeoutException as e:
+#         print("Timeout error:", str(e))
+#         driver.save_screenshot("stripe_payment_error.png")
+#         driver.switch_to.default_content()
+
+#     except Exception as e:
+#         print("Unexpected error:", str(e))
+#         driver.save_screenshot("unexpected_stripe_error.png")
+#         driver.switch_to.default_content()
 
 if __name__ == "__main__":
     main()
